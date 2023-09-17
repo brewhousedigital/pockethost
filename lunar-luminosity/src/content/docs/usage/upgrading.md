@@ -1,4 +1,6 @@
-# Upgrading your Instance Version
+---
+title: Upgrading your Instance Version
+---
 
 PocketHost supports all versions of PocketBase.
 

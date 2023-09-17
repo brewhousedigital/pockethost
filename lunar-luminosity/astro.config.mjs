@@ -1,3 +1,4 @@
+import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
@@ -6,7 +7,7 @@ import { SITE_URL } from './src/site_config'
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), mdx()],
   vite: {
     plugins: [rawFonts(['.ttf'])],
     optimizeDeps: { exclude: ['@resvg/resvg-js'] },

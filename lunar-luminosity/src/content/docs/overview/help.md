@@ -1,4 +1,6 @@
-# Getting Help
+---
+title: Getting Help
+---
 
 ## Discussion Forum
 

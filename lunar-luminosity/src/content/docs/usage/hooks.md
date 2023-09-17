@@ -1,4 +1,6 @@
-# PocketBase Hooks
+---
+title: PocketBase Hooks
+---
 
 The prebuilt PocketBase v0.17+ executable comes with an embedded ES5 JavaScript engine (goja) which enables you to write custom server-side code using plain JavaScript.
 

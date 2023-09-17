@@ -1,12 +1,12 @@
 ---
-description: The zero-config, up-in-seconds, hosting platform for PocketBase
+title: Introduction
 ---
 
 # 👋 Welcome to PocketHost
 
 ## Overview
 
-PocketHost ([https://pockethost.io](https://pockethost.io) hosts your [PocketBase](https://pocketbase.io) projects so you don't have to. Create a project like you would in Firebase and Supabase and let PocketHost do the rest.
+PocketHost ([https://pockethost.io](https://pockethost.io)) hosts your [PocketBase](https://pocketbase.io) projects so you don't have to. Create a project like you would in Firebase and Supabase and let PocketHost do the rest.
 
 PocketHost is a cloud hosting platform for PocketBase. You can use it to instantly provision a PocketBase backend for your latest project. Features include:
 

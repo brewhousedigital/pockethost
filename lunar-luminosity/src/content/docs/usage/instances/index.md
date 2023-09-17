@@ -1,4 +1,6 @@
-# Instance Details
+---
+title: Instance Details
+---
 
 PocketHost provides a simple dashboard where you can manage your instance.
 

@@ -1,4 +1,6 @@
-# Accessing Your Instance
+---
+title: Accessing Your Instance
+---
 
 Your PocketBase instance managed by PocketHost is accessible in two ways:
 

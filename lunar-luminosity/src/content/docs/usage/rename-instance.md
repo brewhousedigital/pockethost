@@ -1,4 +1,6 @@
-# Renaming an Instance
+---
+title: Renaming an Instance
+---
 
 PocketHost instances can always be accessed by their permalink, such as `https://mfsicdp6ia1zpiu.pockethost.io`, but they can also be accessed by convenient subdomain such as `https://harvest.pockethost.io`.
 

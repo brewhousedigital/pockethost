@@ -1,4 +1,6 @@
-# Creating an Instance
+---
+title: Creating an Instance
+---
 
 Every PocketHost instance runs on a unique subdomain. To create a new instance, head to [https://pockethost.io/app/new](https://pockethost.io/app/new).
 
