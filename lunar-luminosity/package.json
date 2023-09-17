@@ -23,6 +23,7 @@
     "tailwindcss": "^3.2.6"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^1.1.0",
     "pagefind": "^0.10.7"
   }
 }

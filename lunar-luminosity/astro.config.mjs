@@ -7,7 +7,7 @@ import { SITE_URL } from './src/site_config'
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [tailwind(), sitemap(), mdx()],
+  integrations: [mdx(), tailwind(), sitemap()],
   vite: {
     plugins: [rawFonts(['.ttf'])],
     optimizeDeps: { exclude: ['@resvg/resvg-js'] },
