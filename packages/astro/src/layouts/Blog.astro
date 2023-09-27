@@ -21,7 +21,7 @@ const { title, thumbnail, nextEntry, prevEntry } = Astro.props
 
 <Base title={title} thumbnail={thumbnail}>
   <main>
-    <article class="mt-8 p-8 mx-auto prose prose-zinc dark:prose-invert">
+    <article class="mt-8 p-8 mx-auto prose prose-zinc">
       <h1>{title}</h1>
       <slot />
 
@@ -32,7 +32,7 @@ const { title, thumbnail, nextEntry, prevEntry } = Astro.props
             prevEntry && (
               <a
                 href={`/blog/${prevEntry?.slug}`}
-                class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                class="text-gray-500  hover:text-gray-700 "
               >
                 ← {prevEntry?.data.title}
               </a>
@@ -42,7 +42,7 @@ const { title, thumbnail, nextEntry, prevEntry } = Astro.props
             nextEntry && (
               <a
                 href={`/blog/${nextEntry?.slug}`}
-                class="float-right text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                class="float-right text-gray-500  hover:text-gray-700 "
               >
                 {nextEntry?.data.title} →
               </a>
