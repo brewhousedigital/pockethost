@@ -3,7 +3,9 @@ import AuthStateGuard from '$components/svelte/helpers/AuthStateGuard.svelte'
 import VerifyAccountBar from '$components/svelte/VerifyAccountBar.svelte'
 import Navigation from '../components/Navigation.astro'
 import {
-SITE_DEFAULT_OG_IMAGE, SITE_DESCRIPTION, SITE_TITLE
+  SITE_DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_TITLE,
 } from '../site_config'
 
 export interface Props {
@@ -33,8 +35,8 @@ const {
 } = Astro.props
 ---
 
-<!DOCTYPE html>
-<html lang="en" data-theme="forest">
+<!doctype html>
+<html lang="en" data-theme="cupcake">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -53,10 +55,10 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
   </head>
 
-  <body class="dark:bg-zinc-900 scroll-smooth dark:[color-scheme:dark]">
+  <body class="">
     <Navigation />
     <AuthStateGuard client:load>
-      <VerifyAccountBar client:load/>
+      <VerifyAccountBar client:load />
     </AuthStateGuard>
 
     <slot />
