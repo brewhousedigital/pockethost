@@ -1,6 +1,6 @@
 <script lang="ts">
-  import AccordionItem from '$components/AccordionItem.svelte'
-  import CodeSample from '$components/CodeSample.svelte'
+  import AccordionItem from '$components/svelte/AccordionItem.svelte'
+  import CodeSample from '$components/svelte/CodeSample.svelte'
   import { PUBLIC_APP_DOMAIN, PUBLIC_APP_PROTOCOL } from '$src/env'
   import { instance } from './store'
 

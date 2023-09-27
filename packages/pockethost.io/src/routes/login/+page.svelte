@@ -1,6 +1,6 @@
 <script lang="ts">
+  import AlertBar from '$components/svelte/AlertBar.svelte'
   import { handleLogin } from '$util/database'
-  import AlertBar from '$components/AlertBar.svelte'
 
   let email: string = ''
   let password: string = ''
@@ -65,7 +65,11 @@
         <AlertBar icon="bi bi-exclamation-triangle-fill" text={formError} />
       {/if}
 
-      <button type="submit" class="btn btn-primary w-100" disabled={isFormButtonDisabled}>
+      <button
+        type="submit"
+        class="btn btn-primary w-100"
+        disabled={isFormButtonDisabled}
+      >
         Log In <i class="bi bi-arrow-right-short" />
       </button>
     </form>

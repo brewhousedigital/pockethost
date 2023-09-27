@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CodeSample from '$components/CodeSample.svelte'
+  import CodeSample from '$components/svelte/CodeSample.svelte'
   import { PUBLIC_APP_DOMAIN } from '$src/env'
   import { client } from '$src/pocketbase'
   import { bash } from 'svelte-highlight/languages'

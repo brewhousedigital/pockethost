@@ -12,7 +12,7 @@
     "strict": true,
     "paths": {
       "$util/*": ["./src/util/*"],
-      "$components/*": ["./src/components/*"],
+      "$components/svelte/*": ["./src/components/*"],
       "$src/*": ["./src/*"]
     },
     "types": ["./src/global.d.ts"]

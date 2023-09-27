@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { AlertTypes } from '$components/AlertBar.types'
+  import { AlertTypes } from '$components/svelte/AlertBar.types'
 
   export let title: string = ''
   export let text: string = ''
@@ -7,7 +7,10 @@
   export let alertType: AlertTypes = AlertTypes.Warning
 </script>
 
-<div class="alert alert-{alertType} d-flex gap-3 align-items-center" role="alert">
+<div
+  class="alert alert-{alertType} d-flex gap-3 align-items-center"
+  role="alert"
+>
   {#if icon}
     <i class={icon} />
   {/if}

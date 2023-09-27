@@ -1,11 +1,11 @@
 <script>
-  import InitializeTooltips from '$components/InitializeTooltips.svelte'
-  import Navbar from '$components/Navbar.svelte'
-  import VerifyAccountBar from '$components/VerifyAccountBar.svelte'
-  import AuthStateGuard from '$components/helpers/AuthStateGuard.svelte'
-  import Meta from '$components/helpers/Meta.svelte'
-  import Protect from '$components/helpers/Protect.svelte'
-  import ThemeDetector from '$components/helpers/ThemeDetector.svelte'
+  import InitializeTooltips from '$components/svelte/InitializeTooltips.svelte'
+  import Navbar from '$components/svelte/Navbar.svelte'
+  import VerifyAccountBar from '$components/svelte/VerifyAccountBar.svelte'
+  import AuthStateGuard from '$components/svelte/helpers/AuthStateGuard.svelte'
+  import Meta from '$components/svelte/helpers/Meta.svelte'
+  import Protect from '$components/svelte/helpers/Protect.svelte'
+  import ThemeDetector from '$components/svelte/helpers/ThemeDetector.svelte'
 </script>
 
 <Meta />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CodeSample from '$components/CodeSample.svelte'
+  import CodeSample from '$components/svelte/CodeSample.svelte'
   import { client } from '$src/pocketbase'
   import {
     createCleanupManager,

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment'
   import { page } from '$app/stores'
-  import AlertBar from '$components/AlertBar.svelte'
+  import AlertBar from '$components/svelte/AlertBar.svelte'
   import { handleAccountConfirmation } from '$util/database'
 
   let token: string | null = ''
