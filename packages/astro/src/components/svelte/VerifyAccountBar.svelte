@@ -37,7 +37,9 @@
       >
         <i class="bi bi-envelope-exclamation" />
 
-        <div>Please verify your account by clicking the link in your email</div>
+        <div>
+          Please verify your account by clicking the link in your email.
+        </div>
 
         {#if isButtonProcessing}
           <div class="success-icon">
@@ -45,11 +47,13 @@
             Sent!
           </div>
         {:else}
-          <button
-            type="button"
-            class="btn btn-outline-secondary"
-            on:click={handleClick}>Resend Email</button
-          >
+          <div class="container">
+            <div class="object-none object-center">
+              <a class="btn btn-secondary" on:click={handleClick}
+                >Resend Email</a
+              >
+            </div>
+          </div>
         {/if}
       </div>
 
