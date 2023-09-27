@@ -22,6 +22,7 @@ export const createInvocationMixin = (
     logger,
     async (instance: InstanceFields, pid: InvocationPid) => {
       const init: Partial<InvocationFields> = {
+        uid: instance.uid,
         startedAt: pocketNow(),
         pid,
         instanceId: instance.id,
@@ -48,7 +49,6 @@ export const createInvocationMixin = (
       const _inv = await client
         .collection('invocations')
         .update<InvocationFields>(invocation.id, toUpdate)
-      await instanceApi.updateInstanceSeconds(invocation.instanceId)
       return _inv
     },
   )
@@ -68,7 +68,6 @@ export const createInvocationMixin = (
       const _inv = await client
         .collection('invocations')
         .update<InvocationFields>(invocation.id, toUpdate)
-      await instanceApi.updateInstanceSeconds(invocation.instanceId)
       return _inv
     },
   )

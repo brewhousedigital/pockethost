@@ -1,4 +1,9 @@
-import { DAEMON_PB_DATA_DIR, DAEMON_PB_MIGRATIONS_DIR } from '$constants'
+import {
+  DAEMON_PB_DATA_DIR,
+  DAEMON_PB_HOOKS_DIR,
+  DAEMON_PB_MIGRATIONS_DIR,
+  DEBUG,
+} from '$constants'
 import { assert, mkInternalUrl, tryFetch } from '$util'
 import {
   InvocationPid,
@@ -24,6 +29,7 @@ export type PocketbaseCommand = 'serve' | 'migrate'
 export type Env = { [_: string]: string }
 export type SpawnConfig = {
   command: PocketbaseCommand
+  name: string
   slug: string
   version?: string
   port?: number
@@ -78,6 +84,7 @@ export const createPocketbaseService = async (
     const {
       version,
       command,
+      name,
       slug,
       port,
       onUnexpectedStop,
@@ -105,6 +112,9 @@ export const createPocketbaseService = async (
       `--publicDir`,
       `/host_data/pb_public`,
     ]
+    if (DEBUG) {
+      args.push(`--debug`)
+    }
     if (gte(realVersion.version, `0.9.0`)) {
       args.push(`--migrationsDir`)
       args.push(`/host_data/pb_migrations`)
@@ -124,22 +134,30 @@ export const createPocketbaseService = async (
     const stdoutHistory: string[] = []
     const stderrHistory: string[] = []
     const _stdoutData = (data: Buffer) => {
-      dbg(`${slug} stdout: ${data}`)
-      stdoutHistory.push(data.toString())
-      if (stdoutHistory.length > 100) stdoutHistory.pop()
+      const lines = data.toString().split(/\n/)
+      lines.forEach((line) => {
+        dbg(`${slug} stdout: ${line}`)
+      })
+      stdoutHistory.push(...lines)
+      while (stdoutHistory.length > 100) stdoutHistory.shift()
     }
     stdout.on('data', _stdoutData)
     const _stdErrData = (data: Buffer) => {
-      warn(`${slug} stderr: ${data}`)
-      stderrHistory.push(data.toString())
-      if (stderrHistory.length > 100) stderrHistory.pop()
+      const lines = data.toString().split(/\n/)
+      lines.forEach((line) => {
+        warn(`${slug} stderr: ${line}`)
+      })
+      stderrHistory.push(...lines)
+      while (stderrHistory.length > 100) stderrHistory.shift()
     }
     stderr.on('data', _stdErrData)
     const createOptions: ContainerCreateOptions = {
       Image: `pockethost/pocketbase`,
       Cmd: args,
       Env: map(env, (v, k) => `${k}=${v}`),
+      name: `${name}-${+new Date()}`,
       HostConfig: {
+        AutoRemove: true,
         CpuPercent: 10,
         PortBindings: {
           '8090/tcp': [{ HostPort: `${port}` }],
@@ -152,6 +170,11 @@ export const createPocketbaseService = async (
               ? DAEMON_PB_MIGRATIONS_DIR
               : `${DAEMON_PB_DATA_DIR}/${slug}/pb_migrations`
           }:/host_data/pb_migrations`,
+          `${
+            isMothership
+              ? DAEMON_PB_HOOKS_DIR
+              : `${DAEMON_PB_DATA_DIR}/${slug}/pb_hooks`
+          }:/host_data/pb_hooks`,
         ],
       },
       Tty: false,
