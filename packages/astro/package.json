@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.0.10",
     "astro-iconify": "^1.2.0",
+    "highlight.js": "^11.8.0",
     "pagefind": "^0.10.7",
     "satori": "^0.3.1",
     "satori-html": "^0.3.2",
