@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import AuthStateGuard from '$components/svelte/helpers/AuthStateGuard.svelte'
-  import { PUBLIC_APP_DOMAIN } from '$env/static/public'
+  import { PUBLIC_APP_DOMAIN } from '$src/env'
   import { client } from '$src/pocketbase'
   import {
     assertExists,
